@@ -1,0 +1,71 @@
+<<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Método del Punto Fijo</title>
+    <script type="text/javascript" src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <header>     
+        <h1 class="titulo">Objeto Virtual de Información (OVI) - Métodos Numéricos</h1>
+    </header>
+    <main>
+    <nav class="barra">
+        <ul>
+            <li><a href="../index.html">Inicio</a></li>
+            <li><h3>Lectura</h3>
+                <ul class="opciones">
+                    <li><a href="../lectura/biseccion.html">Bisección</a></li>
+                    <li><a href="../lectura/newton_raphson.html">Newton-Raphson</a></li>
+                    <li><a href="../lectura/regla_falsa.html">Regla Falsa</a></li>
+                    <li><a href="../lectura/secante.html">Secante</a></li>
+                    <li><a href="../lectura/punto_fijo.html">Punto Fijo</a></li>
+                </ul>
+            </li>
+            <li><h3>Multimedia</h3>
+                <ul class="opciones">
+                    <li><a href="../multimedia/multimedia1.html">Multimedia 1</a></li>
+                    <li><a href="../multimedia/multimedia2.html">Multimedia 2</a></li>
+                </ul>
+            </li>
+            <li><a href="../actividades/actividades.html">Actividad</a></li>
+            <li><a href="../autor/autores.html">Autores</a></li>
+        </ul>
+    </nav>
+    <section class="contenido">
+        <h1>Método del Punto Fijo</h1>
+        <p>El método del <strong>punto fijo</strong> es una técnica iterativa utilizada para encontrar soluciones a ecuaciones de la forma \( f(x) = 0 \). 
+            En lugar de resolver directamente la ecuación, se reescribe en la forma \( x = g(x) \), donde la función \( g(x) \) define una transformación de \( x \) 
+            que, si es convergente, permitirá encontrar la raíz de la ecuación inicial.</p>
+        
+        <h2>Fundamento del Método</h2>
+        <p>Dado un problema de la forma:</p>
+        <p>\[ f(x) = 0 \]</p>
+        <p>Se reescribe como:</p>
+        <p>\[ x = g(x) \]</p>
+        <p>donde \( g(x) \) es una función diseñada de tal manera que la sucesión iterativa:</p>
+        <p>\[ x_{i+1} = g(x_i) \]</p>
+        <p>converja a la raíz de la ecuación.</p>
+        
+        <p>El criterio de convergencia del método depende de la derivada de \( g(x) \). Si se cumple que:</p>
+        <p>\[ |g'(x)| < 1 \]</p>
+        <p>en un intervalo que contiene la raíz, el método asegurará la convergencia.</p>
+        
+        <h2>algoritmo</h2>
+        <ol class="text1">
+            <li>Reescribir la ecuación \( f(x) = 0 \) en la forma \( x = g(x) \).</li>
+            <li>Elegir un valor inicial \( x_0 \) que esté dentro del intervalo donde se espera la solución.</li>
+            <li>Aplicar la iteración: \[ x_{i+1} = g(x_i) \]</li>
+            <li>Repetir el proceso hasta que la diferencia entre dos iteraciones consecutivas sea menor que una tolerancia preestablecida.</li>
+        </ol>
+    </section>
+    </main>
+    <footer>
+        <p>Universidad De Cordoba</p>
+        <p>&copy; 2025 OVI - Métodos Numéricos | Desarrollado para fines educativos</p>
+    </footer>
+</body>
+</html>

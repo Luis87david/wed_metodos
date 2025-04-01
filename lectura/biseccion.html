@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <head>
+        <script type="text/javascript" async
+            src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script type="text/javascript" async
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+    
+    <title>Document</title>
+</head>
+<body>
+
+        <header class="titulo">
+            <h1>Objeto Virtual de Información(OVI) - Métodos Numéricos</h1>
+        </header>
+        <main>
+        <nav class="barra">
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><h3>Lectura</h3>
+                    <ul class="opciones">
+                        <li><a href="../lectura/biseccion.html">Bisección</a></li>
+                        <li><a href="../lectura/newton_raphson.html">Newton-Raphson</a></li>
+                        <li><a href="../lectura/regla_falsa.html">Regla Falsa</a></li>
+                        <li><a href="../lectura/secante.html">Secante</a></li>
+                        <li><a href="../lectura/punto_fijo.html">Punto Fijo</a></li>
+                    </ul>
+                </li>
+                <li><h3>Multimedia</h3>
+                    <ul class="opciones">
+                        <li><a href="../multimedia/multimedia1.html">Multimedia 1</a></li>
+                        <li><a href="../multimedia/multimedia2.html">Multimedia 2</a></li>
+                    </ul>
+                </li>
+                <li><a href="../actividades/actividades.html">Actividad</a></li>
+                <li><a href="../autor/autores.html">Autores</a></li>
+            </ul>
+        </nav>
+        <section class="contenido">
+            <h1>Método de la Bisección</h1>
+            <p>El método de la bisección es un tipo de búsqueda incremental que se emplea para encontrar la raíz de una función en un intervalo donde ocurre un cambio de signo. Este método se basa en la división repetida del intervalo a la mitad, refinando la aproximación de la raíz en cada iteración.</p>
+    
+            <p>Si una función continua \( f(x) \) tiene valores de signos opuestos en los extremos de un intervalo \([x_i, x_s]\), es decir:</p>
+            <p>
+                \[
+                f(x_i) \cdot f(x_s) < 0
+                \]
+            </p>
+            <p>Entonces, según el teorema del valor intermedio, existe al menos una raíz real en el intervalo. El método de la bisección divide repetidamente este intervalo a la mitad y selecciona el subintervalo donde la función cambia de signo, acercándose progresivamente a la raíz con mayor precisión.</p>
+    
+            <h2>Algoritmo</h2>
+    
+            <h3>1. Elección del intervalo inicial:</h3>
+            <p>Se eligen valores iniciales \( x_i \) y \( x_s \) tales que:</p>
+            <p>
+                \[
+                f(x_i) \cdot f(x_s) < 0
+                \]
+            </p>
+            <p>Asegurando que la raíz esté contenida en el intervalo.</p>
+    
+            <h3>2. Cálculo del punto medio:</h3>
+            <p>Se determina una aproximación inicial de la raíz como:</p>
+            <p>
+                \[
+                x_p = \frac{x_i + x_s}{2}
+                \]
+            </p>
+            <h3>3. Evaluación y refinamiento del intervalo:</h3>
+            
+            <ol class="text1">
+                <li>Si \( f(x_i) \cdot f(x_p) < 0 \), la raíz se encuentra en el subintervalo \( [x_i, x_p] \), por lo que se actualiza \( x_s = x_p \).</li>
+                <li>Si \( f(x_i) \cdot f(x_p) > 0 \), la raíz está en el subintervalo \( [x_p, x_s] \), por lo que se actualiza \( x_i = x_p \).</li>
+                <li>Si \( f(x_i) \cdot f(x_p) = 0 \), entonces \( x_p \) es la raíz exacta y el proceso termina.</li>
+            </ol>
+            
+            <h3>4. Criterio de paro</h3>
+            <p>Se repite el procedimiento hasta que el intervalo sea menor que una tolerancia preestablecida o hasta que la evaluación de la función en el punto medio sea suficientemente cercana a cero.</p>
+        </section>
+        </main>
+        <footer>
+            <p>Universidad De Cordoba</p>
+            <p>&copy; 2025 OVI - Métodos Numéricos | Desarrollado para fines educativos</p>
+        </footer>
+
+</body>
+</html>

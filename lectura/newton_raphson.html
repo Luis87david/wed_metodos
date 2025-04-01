@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <script type="text/javascript" async
+        src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script type="text/javascript" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <title>Método de Newton-Raphson</title>
+</head>
+<body>
+
+    <header class="titulo">
+        <h1>Objeto Virtual de Información (OVI) - Métodos Numéricos</h1>
+    </header>
+    <main>
+    <nav class="barra">
+        <ul>
+            <li><a href="../index.html">Inicio</a></li>
+            <li><h3>Lectura</h3>
+                <ul class="opciones">
+                    <li><a href="../lectura/biseccion.html">Bisección</a></li>
+                    <li><a href="../lectura/newton_raphson.html">Newton-Raphson</a></li>
+                    <li><a href="../lectura/regla_falsa.html">Regla Falsa</a></li>
+                    <li><a href="../lectura/secante.html">Secante</a></li>
+                    <li><a href="../lectura/punto_fijo.html">Punto Fijo</a></li>
+                </ul>
+            </li>
+            <li><h3>Multimedia</h3>
+                <ul class="opciones">
+                    <li><a href="../multimedia/multimedia1.html">Multimedia 1</a></li>
+                    <li><a href="../multimedia/multimedia2.html">Multimedia 2</a></li>
+                </ul>
+            </li>
+            <li><a href="../actividades/actividades.html">Actividad</a></li>
+            <li><a href="../autor/autores.html">Autores</a></li>
+        </ul>
+    </nav>
+
+    <section class="contenido">
+        <h1>Método de Newton-Raphson</h1>
+        <p>
+            El método de Newton-Raphson es una de las fórmulas más utilizadas para localizar raíces de ecuaciones algebraicas y trascendentes.
+            Este método es iterativo y abierto, lo que significa que requiere una estimación inicial para la raíz. Es ampliamente empleado debido
+            a su rapidez de convergencia en comparación con otros métodos como el de la bisección o la secante.
+        </p>
+
+        <h2>Fundamento del Método</h2>
+        <p>
+            Si el valor inicial para la raíz es \( x_i \), se traza una tangente desde el punto \( (x_i, f(x_i)) \) de la curva.
+            El punto donde esta tangente cruza el eje \( x \) representa una aproximación mejorada de la raíz.
+        </p>
+
+        <p>Este método se deduce a partir de la interpretación geométrica de la derivada, que se expresa como:</p>
+        \[
+        f'(x_i) = \frac{f(x_i) - 0}{x_i - x_{i+1}}
+        \]
+
+        <p>Reordenando la ecuación, se obtiene la fórmula iterativa de Newton-Raphson:</p>
+        \[
+        x_{i+1} = x_i - \frac{f(x_i)}{f'(x_i)}
+        \]
+
+        <p>Este proceso se repite hasta alcanzar una tolerancia predefinida.</p>
+
+        <h2>Algoritmo del Método de Newton-Raphson</h2>
+        <ol class="text1">
+            <li>Inicializar \( x_i \leftarrow x_0 \).</li>
+            <li>Para \( i = 1 \) hasta \( N \) hacer:
+                <ol>
+                    <li>Si \( |f(x_i)| < \varepsilon \), entonces:
+                        <ul>
+                            <li>Retornar \( x_i \) como la raíz aproximada y salir.</li>
+                        </ul>
+                    </li>
+                    <li>Calcular \( x_{i+1} \leftarrow x_i - \frac{f(x_i)}{f'(x_i)} \).</li>
+                    <li>Si \( |x_{i+1} - x_i| < \varepsilon \), entonces:
+                        <ul>
+                            <li>Retornar \( x_{i+1} \) como la raíz aproximada y salir.</li>
+                        </ul>
+                    </li>
+                    <li>Actualizar \( x_i \leftarrow x_{i+1} \).</li>
+                </ol>
+            </li>
+            <li>Retornar "No se encontró una raíz en \( N \) iteraciones".</li>
+        </ol>
+    </section>
+    </main>
+    <footer>
+        <p>Universidad De Cordoba</p>
+        <p>&copy; 2025 OVI - Métodos Numéricos | Desarrollado para fines educativos</p>
+    </footer>
+
+</body>
+</html>

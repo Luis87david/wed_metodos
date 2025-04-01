@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <script type="text/javascript" src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <title>Método de la Regla Falsa</title>
+</head>
+<body>
+
+        <header class="titulo">
+            <h1>Objeto Virtual de Información (OVI) - Métodos Numéricos</h1>
+        </header>
+        <main>
+        <nav class="barra">
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><h3>Lectura</h3>
+                    <ul class="opciones">
+                        <li><a href="../lectura/biseccion.html">Bisección</a></li>
+                        <li><a href="../lectura/newton_raphson.html">Newton-Raphson</a></li>
+                        <li><a href="../lectura/regla_falsa.html">Regla Falsa</a></li>
+                        <li><a href="../lectura/secante.html">Secante</a></li>
+                        <li><a href="../lectura/punto_fijo.html">Punto Fijo</a></li>
+                    </ul>
+                </li>
+                <li><h3>Multimedia</h3>
+                    <ul class="opciones">
+                        <li><a href="../multimedia/multimedia1.html">Multimedia 1</a></li>
+                        <li><a href="../multimedia/multimedia2.html">Multimedia 2</a></li>
+                    </ul>
+                </li>
+                <li><a href="../actividades/actividades.html">Actividad</a></li>
+                <li><a href="../autor/autores.html">Autores</a></li>
+            </ul>
+        </nav>
+        <section class="contenido">
+            <h1>Método de la Regla Falsa</h1>
+            <p>se trata de un procedimiento aritmético que permite resolver ecuaciones lineales. Para ello parte de un valor cualquiera (método simple) o de dos valores (doble falsa posición). A partir de estas falsas posiciones se obtiene la solución de la ecuación por proporcionalidad.</p>
+            <h2>Concepto y Fundamento</h2>
+                <p>
+                El método de la Regla Falsa se basa en la idea de que si una función continua \( f(x) \) cambia de signo en un intervalo \([a, b]\), entonces existe al menos una raíz en ese intervalo.  
+                </p>
+                <p>
+                En lugar de elegir el punto medio como en el método de Bisección, la Regla Falsa utiliza una línea secante entre los puntos \( (a, f(a)) \) y \( (b, f(b)) \) para estimar la raíz.  
+                </p>
+                <p>
+                La intersección de esta línea secante con el eje \( x \) se calcula con la fórmula:  
+                \[
+                x_r = \frac{a f(b) - b f(a)}{f(b) - f(a)}
+                \]
+                </p>
+                <p>
+                Si \( f(x_r) \) es cercano a cero dentro de una tolerancia establecida, entonces \( x_r \) se considera la raíz. En caso contrario, se reemplaza uno de los extremos del intervalo manteniendo el signo de cambio en la función.  
+                </p>
+
+            <h2>algoritmo</h2>
+            <p>
+                <ol class="text1">
+                <li>Seleccionar un intervalo \([a, b]\) donde \( f(a) f(b) < 0 \).</li>
+                <li>Calcular el punto de intersección de la línea secante con el eje \( x \):  
+                    \[
+                    x_r = \frac{a f(b) - b f(a)}{f(b) - f(a)}
+                    \]
+                </li>
+                <li>Evaluar \( f(x_r) \):  
+                    <ul>
+                        <li>Si \( |f(x_r)| \) es menor que una tolerancia deseada, detenerse y devolver \( x_r \) como la raíz.</li>
+                        <li>Si \( f(a) f(x_r) < 0 \), entonces la raíz está en \([a, x_r]\), por lo que se actualiza \( b = x_r \).</li>
+                        <li>Si \( f(x_r) f(b) < 0 \), entonces la raíz está en \([x_r, b]\), por lo que se actualiza \( a = x_r \).</li>
+                    </ul>
+                </li>
+                <li>Repetir los pasos 2 y 3 hasta alcanzar la tolerancia deseada o un número máximo de iteraciones.</li>
+                </ol>
+            </p>
+        </section>
+        </main>
+        <footer>
+            <p>Universidad De Cordoba</p>
+            <p>&copy; 2025 OVI - Métodos Numéricos | Desarrollado para fines educativos</p>
+        </footer>
+
+</body>
+</html>
